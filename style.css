@@ -159,54 +159,149 @@ nav ul li a:hover {
     font-weight: bold;
 }
 
-.resume-download-button {
-    display: flex;
-    align-items: center;
-    font-family: inherit;
+/* --------------New Button------------- */
+/* From Uiverse.io by d3uceY */
+.download-btn {
+    height: 45px;
+    width: 115px;
     cursor: pointer;
-    font-weight: 500;
-    font-size: 17px;
-    padding: 0.8em 1.5em 0.8em 1.2em;
-    color: white;
-    background: linear-gradient(0deg, rgba(77, 54, 208, 1) 0%, rgba(132, 116, 254, 1) 100%);
+    background: white;
     border: none;
-    box-shadow: 0 0.7em 1.5em -0.5em #4d36d0be;
-    letter-spacing: 0.05em;
-    border-radius: 20em;
-    transition: all 0.3s ease;
+    background: #ff0021;
+    border-radius: 30px;
+    overflow: hidden;
 }
 
-.resume-download-button svg {
-    margin-right: 8px;
+.button-content {
+    transform: translateY(-45px);
+    transition: all 250ms ease-in-out;
 }
 
-.resume-download-button:hover {
-    box-shadow: 0 0.5em 1.5em -0.5em #4d36d0be;
+.svg-container,
+.text-container {
+    height: 45px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.resume-download-button:active {
-    box-shadow: 0 0.3em 1em -0.5em #4d36d0be;
+.text-container .text {
+    font-size: 13px;
+    color: #fff;
+    font-weight: 600;
+    opacity: 1;
+    transition: opacity ease-in-out 250ms;
 }
 
-/* Media query to hide the text on smaller screens */
-@media (max-width: 768px) {
-    /* .resume-download-button .button-text {
-        /* display: none; */
-    /* Hide text on mobile screens */
+.download-icon {
+    height: 25px;
+    width: 25px;
+    fill: #fff;
+    opacity: 0;
+    transition: opacity ease-in-out 250ms;
+}
 
+/* hover state for the button */
+.download-btn:hover .button-content {
+    transform: translateY(0px);
+}
 
-    .resume-download-button {
-        padding: 0.8em;
-        width: 300px;
-        gap: 15px;
-        /* Adjust padding to fit the icon */
+.download-btn:hover .text {
+    opacity: 0;
+}
+
+.download-btn:hover .download-icon {
+    opacity: 1;
+}
+
+.download-btn:focus .download-icon {
+    -webkit-animation: heartbeat 1.5s ease-in-out infinite both;
+    animation: heartbeat 1.5s ease-in-out infinite both;
+}
+
+@-webkit-keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
     }
 
-    .resume-download-button svg {
-        margin-right: 0;
-        /* Remove margin around the icon */
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
     }
 }
+
+@keyframes heartbeat {
+    from {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-transform-origin: center center;
+        transform-origin: center center;
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    10% {
+        -webkit-transform: scale(0.91);
+        transform: scale(0.91);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    17% {
+        -webkit-transform: scale(0.98);
+        transform: scale(0.98);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+
+    33% {
+        -webkit-transform: scale(0.87);
+        transform: scale(0.87);
+        -webkit-animation-timing-function: ease-in;
+        animation-timing-function: ease-in;
+    }
+
+    45% {
+        -webkit-transform: scale(1);
+        transform: scale(1);
+        -webkit-animation-timing-function: ease-out;
+        animation-timing-function: ease-out;
+    }
+}
+
+/* hover state for the button */
+
+/* -------------Trash Button-----------------> */
+
 
 /* Consolidated .hamburger class */
 .hamburger {

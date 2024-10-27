@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
+    
+    // Reusable Resume Download Function
+    function downloadResume() {
+        const link = document.createElement('a');
+        link.href = 'photos/Resume/Devang_Resume_Nestle_.pdf'; // Path to your resume
+        link.download = 'Devang_Gupta_Resume.pdf'; // File name for download
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+    }
+
     // Typewriting effect
     var typed = new Typed('#element', {
         strings: ['Engineer', 'Front-End Developer', 'Digital Marketer'],
@@ -106,9 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.transform = 'scale(1)';
         });
 
-        downloadResumeButton.addEventListener('click', function() {
-            window.location.href = 'your_resume_link_here.pdf'; // Replace with the actual link to your resume
-        });
+        // Attach the resume download functionality to the button
+        downloadResumeButton.addEventListener('click', downloadResume);
     }
 
     // Function to toggle the menu visibility of NavBar
