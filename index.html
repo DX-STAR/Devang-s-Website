@@ -487,13 +487,14 @@
         <h1 class="contact-form-title">Contact Me</h1>
         <div class="contact-form-grid">
             <div>
-                <form id="contact-form" class="contact-form">
-                    <input type="text" id="contact-form-name" class="contact-form-input" placeholder="Your Name"
-                        required>
-                    <input type="email" id="contact-form-email" class="contact-form-input" placeholder="Your Email"
-                        required>
-                    <input type="number" id="contact-for-number" class="contact-form-input" placeholder="Your Contact"
-                        required>
+                <form id="contact-form" class="contact-form" action="https://formspree.io/f/xkgnorqy" method="POST">
+
+                    <input type="text" id="contact-form-name" name="name" class="contact-form-input"
+                        placeholder="Your Name" required>
+                    <input type="email" id="contact-form-email" name="email" class="contact-form-input"
+                        placeholder="Your Email" required>
+                    <input type="tel" id="contact-form-number" name="phone" class="contact-form-input"
+                        placeholder="Your Contact" required>
                     <select id="contact-form-reason" class="contact-form-select" required>
                         <option value="">Reason for contact</option>
                         <option value="collaboration">Collaboration</option>
@@ -501,10 +502,14 @@
                         <option value="mentorship">Mentorship</option>
                         <option value="other">Other</option>
                     </select>
-                    <textarea id="contact-form-message" class="contact-form-textarea" placeholder="Your Message"
-                        required></textarea>
+                    <textarea id="contact-form-message" class="contact-form-textarea" name="message"
+                        placeholder="Your Message" required></textarea>
 
-                    <button id="contact-button" class="contact-button" data-text="Awesome"
+                    <div id="contact-form-toast" style="display: none;">
+                        <span id="contact-form-toast-message"></span>
+                    </div>
+
+                    <button id="contact-button" class="contact-button" type="submit" data-text="Awesome"
                         style="margin: auto; width: 250px; height: auto; background: transparent; padding: 5px; border: 5px solid #37FF8B; cursor: pointer; --border-right: 6px; --text-stroke-color: rgba(255,255,255,0.6); --animation-color: #37FF8B; --fs-size: 2em; letter-spacing: 3px; text-decoration: none; font-size: var(--fs-size); font-family: 'Arial'; position: relative; text-transform: uppercase; color: transparent; -webkit-text-stroke: 1px var(--text-stroke-color);">
                         <span class="actual-text" style="position: relative;">&nbsp;SEND&nbsp;</span>
                         <span aria-hidden="true" class="hover-text"
@@ -512,6 +517,7 @@
                     </button>
                 </form>
             </div>
+
             <div>
                 <h2>Download My Resume</h2>
                 <p>Get a detailed look at my experience and skills:</p>
@@ -594,7 +600,10 @@
     </div>
 
     <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
     <script src="script.js"></script>
+    <!-- for sending contact details -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>
